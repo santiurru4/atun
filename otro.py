@@ -6,7 +6,9 @@ lista5=[]
 
 with open("palabras5.txt", "w") as g:
     with open("listado.txt", "r", encoding="utf8") as f:
-        for line in range (1290):
+        largo=len(f.readlines())
+        print("largo:",largo)
+        for line in range (largo):
             f_datos = f.readline()
             if len(f_datos) == 6:
                 cant_5s=cant_5s+1
