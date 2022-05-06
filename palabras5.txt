@@ -3,6 +3,7 @@ ambos
 amiga
 antes
 aquel
+araña
 bambu
 barba
 bicho
@@ -26,7 +27,6 @@ deber
 dejar
 demas
 desde
-doÃ±a
 dulce
 ellos
 entre
@@ -68,7 +68,6 @@ nariz
 negro
 nieta
 nieve
-niÃ±o
 noche
 norma
 nueve
@@ -93,6 +92,7 @@ rural
 sacar
 salvo
 segun
+señor
 serio
 siglo
 silla
