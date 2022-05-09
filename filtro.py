@@ -3,7 +3,6 @@ print(">>>FILTRANDO PALABRAS DE 5 LETRAS")
 cant_5s=0
 lista5=[]
 
-
 with open("palabras5.txt", "w") as g:
     with open("listado.txt", "r", encoding="utf8") as f:
         for line in range (1290):
