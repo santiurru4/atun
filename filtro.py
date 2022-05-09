@@ -1,3 +1,5 @@
+import random
+
 print(">>>FILTRANDO PALABRAS DE 5 LETRAS")
 
 cant_5s=0
@@ -15,4 +17,36 @@ with open("palabras5.txt", "w") as g:
 
 print(">>>OPERACION COMPLETADA CON EXITO")
 print(">>>SE ENCONTRARON", cant_5s, "PALABRAS DE 5 LETRAS")
-print(lista5)
+#print(lista5)
+#----------------------------|ETAPA 2|------------------------------------------
+
+solucion = random.choice(lista5)
+print("La palabra aleatoria es", solucion)
+
+palabra=str(input("Introduzca una palabra: "))
+error_a=0
+if len(palabra) == 5:
+    print("es d 5")
+    if palabra in lista5:
+        print("en lista")
+    else:
+        error_a=error_a+1
+        print("ERROR: La palabra no esta en la lista")
+    #no hace falta verificar si tiene caracteres que no son letras porque no pertenecen a la lista
+else:
+    error_a=error_a+1
+    print("ERROR: no es una palabra de 5 letras")
+while error_a!=0:
+    palabra=str(input("Introduzca una palabra: "))
+    error_a=0
+    if len(palabra) == 5:
+        print("es d 5")
+        if palabra in lista5:
+            print("en lista")
+        else:
+            error_a=error_a+1
+            print("ERROR: La palabra no esta en la lista")
+        #no hace falta verificar si tiene caracteres que no son letras porque no pertenecen a la lista
+    else:
+        error_a=error_a+1
+        print("ERROR: no es una palabra de 5 letras")
