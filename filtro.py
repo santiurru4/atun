@@ -31,11 +31,11 @@ if len(palabra) == 5:
         print("en lista")
     else:
         error_a=error_a+1
-        print("ERROR: La palabra no esta en la lista")
+        print("ERROR: La palabra introducida no esta en la lista. Por favor vuelva a ingresar una palabra.")
     #no hace falta verificar si tiene caracteres que no son letras porque no pertenecen a la lista
 else:
     error_a=error_a+1
-    print("ERROR: no es una palabra de 5 letras")
+    print("ERROR:la palabra introducida no es de 5 letras. Por favor vuelva a ingresar una palabra.")
 while error_a!=0:
     palabra=str(input("Introduzca una palabra: "))
     error_a=0
@@ -45,8 +45,8 @@ while error_a!=0:
             print("en lista")
         else:
             error_a=error_a+1
-            print("ERROR: La palabra no esta en la lista")
+            print("ERROR: La palabra introducida no esta en la lista. Por favor vuelva a ingresar una palabra.")
         #no hace falta verificar si tiene caracteres que no son letras porque no pertenecen a la lista
     else:
         error_a=error_a+1
-        print("ERROR: no es una palabra de 5 letras")
+        print("ERROR:la palabra introducida no es de 5 letras. Por favor vuelva a ingresar una palabra.")
