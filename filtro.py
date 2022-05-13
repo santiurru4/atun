@@ -1,5 +1,5 @@
 import random
-
+#----------------------------|ETAPA 1|------------------------------------------
 print(">>>FILTRANDO PALABRAS DE 5 LETRAS")
 
 cant_5s=0                                   #numero de palabras de 5 letras
