@@ -31,3 +31,24 @@ while palabra not in lista5:
     if not palabra.isalpha():
         print("ERROR:Contiene caracteres especiales")
     palabra=str(input("Introduzca una palabra: "))
+
+#----------------------------|ETAPA 3|------------------------------------------
+devolucion=[]
+#a=solucion
+#B=intento
+def comparador(a,b):
+    for i in range(5):
+        x=a[i]
+        y=b[i]
+        if x==y:
+            devolucion.append(y)#Verde
+        elif y in a:
+            devolucion.append(y)#Amarillo
+        else:
+            devolucion.append(y)#Rojo/gris
+solucion=str(input("solucion:"))
+intento=str(input("intento:"))
+
+comparador(solucion,intento)
+qqq="".join(devolucion)
+print(qqq)
