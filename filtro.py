@@ -22,15 +22,16 @@ print(">>>SE ENCONTRARON", cant_5s, "PALABRAS DE 5 LETRAS")
 
 solucion = random.choice(lista5)
 print("La palabra aleatoria es", solucion)
-
-palabra=str(input("Introduzca una palabra: "))
-while palabra not in lista5:
-    print("ERROR:La palabra no está en el diccionario")
-    if len(palabra) != 5:
-        print("ERROR:la palabra introducida no es de 5 letras. Por favor vuelva a ingresar una palabra.")
-    if not palabra.isalpha():
-        print("ERROR:Contiene caracteres especiales")
-    palabra=str(input("Introduzca una palabra: "))
+palabra=input("Introduzca una palabra: ")
+def pregunta(q):
+    while q not in lista5:
+        print("ERROR:La palabra no está en el diccionario")
+        if len(q) != 5:
+            print("ERROR:la palabra introducida no es de 5 letras. Por favor vuelva a ingresar una palabra.")
+        if not q.isalpha():
+            print("ERROR:Contiene caracteres especiales")
+        q=input("Introduzca una palabra: ")
+        print(q)
 
 #----------------------------|ETAPA 3|------------------------------------------
 devolucion=[]
@@ -48,7 +49,12 @@ def comparador(a,b):
             devolucion.append(y)#Rojo/gris
 #solucion=str(input("solucion:"))
 #intento=str(input("intento:"))
+def respuesta(m):
+    qqq="".join(m)
+    print(qqq)
 
-comparador(solucion,palabra)
-qqq="".join(devolucion)
-print(qqq)
+respuesta(devolucion)
+while solucion!=palabra:
+    pregunta(palabra)
+    comparador(solucion,palabra)
+    respuesta(devolucion)
