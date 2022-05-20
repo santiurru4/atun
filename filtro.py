@@ -46,9 +46,9 @@ def comparador(a,b):
             devolucion.append(y)#Amarillo
         else:
             devolucion.append(y)#Rojo/gris
-solucion=str(input("solucion:"))
-intento=str(input("intento:"))
+#solucion=str(input("solucion:"))
+#intento=str(input("intento:"))
 
-comparador(solucion,intento)
+comparador(solucion,palabra)
 qqq="".join(devolucion)
 print(qqq)
