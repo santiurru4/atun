@@ -26,15 +26,14 @@ print(">>>SE ENCONTRARON", cant_5s, "PALABRAS DE 5 LETRAS")
 #print("La palabra aleatoria es", solucion)
 #palabra=input("Introduzca una palabra: ")
 def pregunta(q):
-    while q not in lista5:
+    if q not in lista5:
         print("ERROR:La palabra no está en el diccionario")
         if len(q) != 5:
             print("ERROR:la palabra introducida no es de 5 letras. Por favor vuelva a ingresar una palabra.")
         if not q.isalpha():
             print("ERROR:Contiene caracteres especiales")
+        #q=input("Introduzca otra palabra: ")
         #print("palabra 123=",q)
-        q=input("Introduzca otra palabra: ")
-        print("palabra 123=",q)
         #break
 
 #------------------------------------------|ETAPA 3|------------------------------------------
@@ -64,7 +63,9 @@ print("La palabra aleatoria es", solucion)
 palabra=input("Introduzca una palabra: ")
 while intentos>0:
     if palabra!=solucion:
-        pregunta(palabra)
+        while palabra not in lista5:
+            pregunta(palabra)
+            palabra=input("introduzca otra palabra: ")
         comparador(solucion,palabra)
         respuesta(devolucion)
         if palabra!=solucion:
@@ -75,7 +76,7 @@ while intentos>0:
     else:
         #comparador(solucion,palabra)
         #respuesta(devolucion)
-        print(Fore.GREEN+solucion)
+        print(Back.GREEN+solucion)
         print("¡Ganaste!")
         intentos=0
 print(Back.RED+"Fin del Juego")
