@@ -1,5 +1,8 @@
 import random
-#----------------------------|ETAPA 1|------------------------------------------
+import colorama 
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
+#----------------------------------------|ETAPA 1|------------------------------------------
 print(">>>FILTRANDO PALABRAS DE 5 LETRAS")
 
 cant_5s=0                                   #numero de palabras de 5 letras
@@ -17,12 +20,11 @@ with open("palabras5.txt", "w") as g:       #para guardar las palabras en un arc
 
 print(">>>OPERACION COMPLETADA CON EXITO")
 print(">>>SE ENCONTRARON", cant_5s, "PALABRAS DE 5 LETRAS")
-#print(lista5)
-#----------------------------|ETAPA 2|------------------------------------------
+#-----------------------------------------|ETAPA 2|------------------------------------------
 
-solucion = random.choice(lista5)
-print("La palabra aleatoria es", solucion)
-palabra=input("Introduzca una palabra: ")
+#solucion = random.choice(lista5)
+#print("La palabra aleatoria es", solucion)
+#palabra=input("Introduzca una palabra: ")
 def pregunta(q):
     while q not in lista5:
         print("ERROR:La palabra no está en el diccionario")
@@ -30,10 +32,12 @@ def pregunta(q):
             print("ERROR:la palabra introducida no es de 5 letras. Por favor vuelva a ingresar una palabra.")
         if not q.isalpha():
             print("ERROR:Contiene caracteres especiales")
-        q=input("Introduzca una palabra: ")
-        print(q)
+        #print("palabra 123=",q)
+        q=input("Introduzca otra palabra: ")
+        print("palabra 123=",q)
+        #break
 
-#----------------------------|ETAPA 3|------------------------------------------
+#------------------------------------------|ETAPA 3|------------------------------------------
 devolucion=[]
 #a=solucion
 #B=intento
@@ -42,19 +46,36 @@ def comparador(a,b):
         x=a[i]
         y=b[i]
         if x==y:
-            devolucion.append(y)#Verde
+            devolucion.append(Fore.GREEN+y)#Verde
         elif y in a:
-            devolucion.append(y)#Amarillo
+            devolucion.append(Fore.YELLOW+y)#Amarillo
         else:
-            devolucion.append(y)#Rojo/gris
-#solucion=str(input("solucion:"))
-#intento=str(input("intento:"))
+            devolucion.append(Fore.RED+y)#Rojo/gris
+
 def respuesta(m):
     qqq="".join(m)
     print(qqq)
 
-respuesta(devolucion)
-while solucion!=palabra:
-    pregunta(palabra)
-    comparador(solucion,palabra)
-    respuesta(devolucion)
+#-------------------------------------------|WORDLE|-------------------------------------------
+
+intentos=5
+solucion = random.choice(lista5)
+print("La palabra aleatoria es", solucion)
+palabra=input("Introduzca una palabra: ")
+while intentos>0:
+    if palabra!=solucion:
+        pregunta(palabra)
+        comparador(solucion,palabra)
+        respuesta(devolucion)
+        if palabra!=solucion:
+            devolucion=[]
+            print("le quedan ",intentos,"intentos")
+            palabra=input("Siguiente intento: ")
+            intentos=intentos-1
+    else:
+        #comparador(solucion,palabra)
+        #respuesta(devolucion)
+        print(Fore.GREEN+solucion)
+        print("¡Ganaste!")
+        intentos=0
+print(Back.RED+"Fin del Juego")
