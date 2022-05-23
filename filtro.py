@@ -73,10 +73,11 @@ while intentos>0:
             print("le quedan ",intentos,"intentos")
             palabra=input("Siguiente intento: ")
             intentos=intentos-1
-    else:
+    if palabra==solucion:
         #comparador(solucion,palabra)
         #respuesta(devolucion)
         print(Back.GREEN+solucion)
         print("¡Ganaste!")
         intentos=0
-print(Back.RED+"Fin del Juego")
+print(Back.RED+"Fin del Juego.")
+print("La palabra era:", solucion)
