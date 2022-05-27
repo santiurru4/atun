@@ -47,9 +47,12 @@ def comparador(a,b):
         if x==y:
             devolucion.append(Fore.GREEN+y)#Verde
         elif y in a:
-            devolucion.append(Fore.YELLOW+y)#Amarillo
+            if Fore.YELLOW+y not in devolucion:
+                devolucion.append(Fore.YELLOW+y)#Amarillo
+            else:
+                devolucion.append(Fore.WHITE+y)#blanco
         else:
-            devolucion.append(Fore.RED+y)#Rojo/gris
+            devolucion.append(Fore.WHITE+y)#Blanco
 
 def respuesta(m):
     qqq="".join(m)
