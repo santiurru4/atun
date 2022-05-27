@@ -48,7 +48,8 @@ def comparador(a,b):
             devolucion.append(Fore.GREEN+y)#Verde
         elif y in a:
             if Fore.YELLOW+y not in devolucion:
-                devolucion.append(Fore.YELLOW+y)#Amarillo
+                if Fore.GREEN+y not in devolucion:
+                    devolucion.append(Fore.YELLOW+y)#Amarillo
             else:
                 devolucion.append(Fore.WHITE+y)#blanco
         else:
@@ -56,25 +57,27 @@ def comparador(a,b):
 
 def respuesta(m):
     qqq="".join(m)
-    print(qqq)
+    print("         ",qqq)
 
 #-------------------------------------------|WORDLE|-------------------------------------------
-
+print(Back.BLUE+"""------------Bienvenido a Wordle------------
+        Introduzca palabras de 5 letras.   
+        No use caracteres especiales.      """, Back.RESET)
 intentos=5
 solucion = random.choice(lista5)
 print("La palabra aleatoria es", solucion)
-palabra=input("Introduzca una palabra: ")
+palabra=input(Back.CYAN+"Introduzca una palabra:\n"+Back.RESET)
 while intentos>0:
     if palabra!=solucion:
         while palabra not in lista5:
             pregunta(palabra)
-            palabra=input("introduzca otra palabra: ")
+            palabra=input(Back.CYAN+"introduzca otra palabra:\n"+Back.RESET)
         comparador(solucion,palabra)
         respuesta(devolucion)
         if palabra!=solucion:
             devolucion=[]
-            print("le quedan ",intentos,"intentos")
-            palabra=input("Siguiente intento: ")
+            print(Fore.RED+"le quedan ",str(intentos),"intentos")
+            palabra=input(Back.CYAN+"Siguiente intento:\n"+Back.RESET)
             intentos=intentos-1
     if palabra==solucion:
         #comparador(solucion,palabra)
