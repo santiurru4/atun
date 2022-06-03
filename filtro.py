@@ -44,16 +44,23 @@ def comparador(a,b):
     for i in range(5):
         x=a[i]
         y=b[i]
+        cantidad_y=a.count(y)   #se reinicia con cada i 
+        y_restantes=cantidad_y
         if x==y:
             devolucion.append(Fore.GREEN+y)#Verde
+            y_restantes=y_restantes-1
+            if y_restantes < 0:
+                sss=devolucion.index(Fore.YELLOW+y)
+                devolucion.insert(sss,Fore.BLUE+y)
         elif y in a:
-            if Fore.YELLOW+y not in devolucion:
-                if Fore.GREEN+y not in devolucion:
-                    devolucion.append(Fore.YELLOW+y)#Amarillo
+            if y_restantes>0:
+                devolucion.append(Fore.YELLOW+y)#Amarillo
+                y_restantes=y_restantes-1
             else:
-                devolucion.append(Fore.WHITE+y)#blanco
+                devolucion.append(Fore.WHITE+y)#Blanco
         else:
             devolucion.append(Fore.WHITE+y)#Blanco
+        print("quedan", y_restantes, "y")
 
 def respuesta(m):
     qqq="".join(m)
