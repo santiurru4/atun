@@ -45,7 +45,7 @@ def comparador(a,b):
         x=a[i]
         y=b[i]
         cantidad_y=a.count(y)   #se reinicia con cada i 
-        y_restantes=cantidad_y
+        y_restantes=cantidad_y  #comparar count(y) con count de devolucion
         if x==y:
             devolucion.append(Fore.GREEN+y)#Verde
             y_restantes=y_restantes-1
@@ -60,7 +60,6 @@ def comparador(a,b):
                 devolucion.append(Fore.WHITE+y)#Blanco
         else:
             devolucion.append(Fore.WHITE+y)#Blanco
-        print("quedan", y_restantes, "y")
 
 def respuesta(m):
     qqq="".join(m)
