@@ -80,8 +80,6 @@ if __name__=="__main__":
                 palabra=input(Back.CYAN+"Siguiente intento:\n"+Back.RESET)
                 intentos=intentos-1
         if palabra==solucion:
-            #comparador(solucion,palabra)
-            #respuesta(devolucion)
             print(Back.GREEN+solucion)
             print("¡Ganaste!")
             intentos=0
