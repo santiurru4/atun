@@ -10,7 +10,7 @@ if __name__=="__main__":
     lista5=[]                                   #Lista de palabras
     with open("palabras5.txt", "w") as g:       #para guardar las palabras en un archivo .txt aparte
         with open("listado.txt", "r", encoding="utf8") as f:
-            for line in range (1290):
+            for line in range (1290):           #lista de palabras de 1290 elementos, cambiar el numero si se cambia la lista
                 f_datos = f.readline()
                 if len(f_datos) == 6:
                     cant_5s=cant_5s+1
