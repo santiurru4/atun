@@ -42,14 +42,12 @@ if __name__=="__main__":
             y_restantes=cantidad_y_i-cantidad_y_dev
             if x==y:
                 devolucion.append(Fore.GREEN+y)#Verde
-                #y_restantes=y_restantes-1
                 if y_restantes < 0:
-                    sss=devolucion.index(Fore.YELLOW+y)
-                    devolucion[sss] = Fore.WHITE+y   #elimina amarillo
+                    sss=devolucion.index(Fore.YELLOW+y) #posicion amrillo
+                    devolucion[sss] = Fore.WHITE+y   #reemplaza amarillo
             elif y in a:
                 if y_restantes>0:
                     devolucion.append(Fore.YELLOW+y)#Amarillo
-                    #y_restantes=y_restantes-1
                 else:
                     devolucion.append(Fore.WHITE+y)#Blanco
             else:
@@ -62,10 +60,11 @@ if __name__=="__main__":
     #-------------------------------------------|WORDLE|-------------------------------------------
     print(Back.BLUE+"""----------------Bienvenido a Wordle------------
             Introduzca palabras de 5 letras.   
-            No use caracteres especiales.      """, Back.RESET)
+            No use caracteres especiales.      
+            No use mayusculas                  """, Back.RESET)
     intentos=5
     solucion = random.choice(lista5)
-    print("La palabra aleatoria es", solucion)     #borrar el "#" para probar
+    #print("La palabra aleatoria es", solucion)     #borrar el "#" para probar
     palabra=input(Back.CYAN+"Introduzca una palabra:\n"+Back.RESET)
     while intentos>0:
         if palabra!=solucion:
