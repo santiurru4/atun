@@ -42,7 +42,7 @@ if __name__=="__main__":
             y_restantes=cantidad_y_i-cantidad_y_dev
             if x==y:
                 devolucion.append(Fore.GREEN+y)#Verde
-                if y_restantes < 0:
+                if y_restantes <= 0:
                     sss=devolucion.index(Fore.YELLOW+y) #posicion amrillo
                     devolucion[sss] = Fore.WHITE+y   #reemplaza amarillo
             elif y in a:
@@ -76,9 +76,9 @@ if __name__=="__main__":
             if palabra!=solucion:
                 devolucion=[]
                 print(Fore.RED+"le quedan ",str(intentos),"intentos")
-                intentos=intentos-1
                 if intentos!=0:
                     palabra=input(Back.CYAN+"Siguiente intento:\n"+Back.RESET)
+                intentos=intentos-1
                 
         if palabra==solucion:
             print(Back.GREEN+solucion)
